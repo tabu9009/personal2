@@ -1080,3 +1080,18 @@ section {
     padding-right: 20px 15px;
   }
 }
+.form-control.error{
+border: 1px solid red;
+}
+
+.form-control.valid{
+  border: 1px solid green;
+  
+}
+.error{
+  color: red;
+  font-style: italic;
+}
+
+
+

@@ -19,23 +19,25 @@ $(document).ready(function () {
         minlength: 5,
       },
     },
+    submitHandler:function(){
+      $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbzdiyVeGXgv7fLBB653pS3Z1qnjV-wMpU42S8ZjyNxM_tuSGDHopHY6QMF0VwKxC23dng/exec",
+        data:$("#submit-form").serialize(),
+        method:"post",
+        success:function (response){
+            alert("Form submitted successfully")
+            window.location.reload()
+            //window.location.href="https://google.com"
+        },
+        error:function (err){
+            alert("Something Error")
+  
+        }
+    })
+    }
   });
 });
 
-$("#submit-form").submit((e)=>{
-  e.preventDefault()
-  $.ajax({
-      url:"https://script.google.com/macros/s/AKfycbzdiyVeGXgv7fLBB653pS3Z1qnjV-wMpU42S8ZjyNxM_tuSGDHopHY6QMF0VwKxC23dng/exec",
-      data:$("#submit-form").serialize(),
-      method:"post",
-      success:function (response){
-          alert("Form submitted successfully")
-          window.location.reload()
-          //window.location.href="https://google.com"
-      },
-      error:function (err){
-          alert("Something Error")
 
-      }
-  })
-})
+ 
+
